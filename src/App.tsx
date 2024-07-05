@@ -1,14 +1,19 @@
 import { useState } from "react";
+import { Alunos } from "./components/alunos";
+import UserProvider from "./context/user";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState("Sujeito programador");
 
   return (
-    <>
-      <h1>Ecola Dev</h1>
-      <br />
-      <hr />
-    </>
+    <UserProvider>
+      <>
+        <h1>Ecola Dev</h1>
+        <br />
+        <hr />
+        <Alunos />
+      </>
+    </UserProvider>
   );
 }
 
